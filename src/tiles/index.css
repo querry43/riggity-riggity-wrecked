@@ -1,0 +1,65 @@
+.tile-0 {
+  width: 100%;
+  height: 100%;
+  background: darkgray;
+}
+
+.tile-1 {
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+}
+
+.tile-2 {
+  width: 100%;
+  height: 100%;
+  background: lightgreen;
+}
+
+.tile-3 {
+  width: 100%;
+  height: 100%;
+  background: lightgray;
+}
+
+.tile-10 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-10.png");
+  background-size: cover;
+}
+
+.tile-11 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-11.png");
+  background-size: cover;
+}
+
+.tile-12 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-12.png");
+  background-size: cover;
+}
+
+.tile-13 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-13.png");
+  background-size: cover;
+}
+
+.tile-14 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-14.png");
+  background-size: cover;
+}
+
+.tile-15 {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/tile-15.png");
+  background-size: cover;
+}

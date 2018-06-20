@@ -4,14 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.tile {
-  width: 100%;
-  height: 100%;
-  background: blue;
-  color: red;
-}
-
 .tileContainer {
-  width: 20%;
-  height: 20%;
+  width: 14.2%;
+  height: 14.2%;
 }

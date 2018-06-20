@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ItemTypes } from './constants';
-import { DragSource } from 'react-dnd';
+import React from 'react'
+import TileBase from './tile-base'
+import { DragSource } from 'react-dnd'
+import { ItemTypes } from './constants'
 
 const tileSource = {
   beginDrag(props) {
@@ -16,27 +17,23 @@ function collect(connect, monitor) {
   }
 }
 
-class Tile extends Component {
+class BlankTile extends TileBase {
   render() {
     const { connectDragSource, isDragging } = this.props;
     return connectDragSource(
-      <div class="tileContainer">
-        <div class="tile" style={{ opacity: isDragging ? 0.5 : 1, }}>
-          tile
+      <div className="tileContainer">
+        <div className={ this.className } style={{ opacity: isDragging ? 0.5 : 1, }}>
         </div>
       </div>
     )
   }
+
+  get className() { return "blank-tile" }
 }
 
-export default DragSource(ItemTypes.TILE, tileSource, collect)(Tile);
-
-Tile.propTypes = {
-  up: PropTypes.object,
-  right: PropTypes.object,
-  down: PropTypes.object,
-  left: PropTypes.object,
-
+BlankTile.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired
 };
+
+export default DragSource(ItemTypes.TILE, tileSource, collect)(BlankTile);
