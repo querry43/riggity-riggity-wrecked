@@ -1,5 +1,5 @@
 import React from 'react'
-import DraggableTileComponent from './draggable-tile-component'
+import DraggableTileContainer from './draggable-tile-container'
 import TileComponent from './tile-component'
 import TermTile from './term-tile'
 
@@ -18,7 +18,7 @@ export default class BaseTile {
 
   asComponent() {
     return this.draggable
-      ? <DraggableTileComponent key={this.key} className={`tile-${this.type}`} />
+      ? <DraggableTileContainer key={this.key} className={`tile-${this.type}`} />
       : <TileComponent key={this.key} className={`tile-${this.type}`} />
   }
 
