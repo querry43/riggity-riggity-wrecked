@@ -17,9 +17,10 @@ const map = [
 
 const board = new Board(map)
 
-console.log(board.isWin())
-
-ReactDOM.render(
-  board.asComponent(),
-  rootEl
-)
+board.observe(() => {
+  ReactDOM.render(
+    board.asComponent(),
+    rootEl
+  )
+  console.log(`isWin = ${board.isWin()}`)
+})

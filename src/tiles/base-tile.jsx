@@ -14,15 +14,47 @@ export default class BaseTile {
     this.left = new TermTile()
   }
 
+  swapWithTile(tile) {
+    let tmp = tile.up
+    tile.up.down = this
+    this.up.down = tile
+    tile.up = this.up
+    this.up = tmp
+
+    tmp = tile.right
+    tile.right.left = this
+    this.right.left = tile
+    tile.right = this.right
+    this.right = tmp
+
+    tmp = tile.down
+    tile.down.up = this
+    this.down.up = tile
+    tile.down = this.down
+    this.down = tmp
+
+    tmp = tile.left
+    tile.left.right = this
+    this.left.right = tile
+    tile.left = this.left
+    this.left = tmp
+  }
+
   isWin(caller) { return false }
 
-  asComponent() {
+  asComponent(board) {
+    const self = this
+
     return this.draggable
-      ? <DraggableTileContainer key={this.key} className={`tile-${this.type}`} />
+      ? <DraggableTileContainer
+          key={this.key}
+          className={`tile-${this.type}`}
+          getState={() => {return self}}
+          emitChange={() => {board.emitChange()}}/>
       : <TileComponent key={this.key} className={`tile-${this.type}`} />
   }
 
-  rowAsComponents() {
-    return [this.asComponent()].concat(this.right.rowAsComponents())
+  rowAsComponents(board) {
+    return [this.asComponent(board)].concat(this.right.rowAsComponents(board))
   }
 }

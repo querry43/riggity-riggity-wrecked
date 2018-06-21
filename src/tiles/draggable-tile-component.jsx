@@ -5,7 +5,7 @@ import { ItemTypes } from './constants'
 
 const tileSource = {
   beginDrag(props) {
-    return {}
+    return {getState: props.getState}
   }
 }
 
@@ -31,7 +31,9 @@ class DraggableTileComponent extends Component {
 DraggableTileComponent.propTypes = {
   className: PropTypes.string.isRequired,
   connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
+  isDragging: PropTypes.bool.isRequired,
+  getState: PropTypes.func.isRequired,
+  emitChange: PropTypes.func.isRequired
 }
 
 export default DragSource(ItemTypes.TILE, tileSource, collect)(DraggableTileComponent)

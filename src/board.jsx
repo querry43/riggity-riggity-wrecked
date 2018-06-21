@@ -38,8 +38,6 @@ export default class Board {
             break;
         }
 
-        //console.debug(`${i} = ${row}.${col}`)
-        //console.debug(tile)
         if (row > 0) {
           tile.left = tiles[i-1]
           tiles[i-1].right = tile
@@ -61,13 +59,23 @@ export default class Board {
     let components = []
     let row = this.firstTile
     for (let i = 0; i < 7; i++) {
-      components = components.concat(row.rowAsComponents())
+      components = components.concat(row.rowAsComponents(this))
       row = row.down
     }
+
     return <BoardComponent tiles={components} />
   }
 
   isWin() {
     return this.startTile.isWin(null)
+  }
+
+  observe(fn) {
+    this.observer = fn
+    this.emitChange()
+  }
+
+  emitChange() {
+    this.observer()
   }
 }
