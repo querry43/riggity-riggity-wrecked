@@ -1,0 +1,40 @@
+.tileContainer {
+  position: relative;
+  width: 14.2%;
+  height: 14.2%;
+}
+
+.tileMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.5;
+  background-color: yellow;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.tile-1 { background-image: url("./images/tile-1.png"); }
+.tile-2 { background-image: url("./images/tile-2.jpg"); }
+.tile-3 { background: lightgray; }
+.tile-10 { background-image: url("./images/tile-10.png"); }
+.tile-11 { background-image: url("./images/tile-11.png"); }
+.tile-12 { background-image: url("./images/tile-12.png"); }
+.tile-13 { background-image: url("./images/tile-13.png"); }
+.tile-14 { background-image: url("./images/tile-14.png"); }
+.tile-15 { background-image: url("./images/tile-15.png"); }
+
+.tile-30 { background-image: url("./images/tile-30.png"); }
+
+.tile-50 { background-image: url("./images/tile-50.jpg"); }
+.tile-51 { background-image: url("./images/tile-51.jpg"); }
+.tile-52 { background-image: url("./images/tile-52.jpg"); }
+.tile-53 { background-image: url("./images/tile-53.jpg"); }
+.tile-54 { background-image: url("./images/tile-54.png"); }

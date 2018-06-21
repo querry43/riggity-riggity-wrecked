@@ -4,7 +4,7 @@ import RickTile from './rick-tile'
 import StartTile from './start-tile'
 import TermTile from './term-tile'
 
-import './index.css'
+import './style.css'
 
 export {
   BaseTile,

@@ -20,7 +20,7 @@ class DraggableTileComponent extends Component {
   render() {
     const { className, connectDragSource, isDragging } = this.props
     return connectDragSource(
-      <div className={ className } style={{ opacity: isDragging ? 0.5 : 1, }}>
+      <div className={ `tile ${className}` } style={{ opacity: isDragging ? 0.5 : 1, }}>
       </div>
     )
   }

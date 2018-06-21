@@ -22,6 +22,12 @@ export default class Board {
             tile = new RickTile(false, map[i], i)
             break;
           case 3:
+          case 30:
+          case 50:
+          case 51:
+          case 52:
+          case 53:
+          case 54:
             tile = new BaseTile(true, map[i], i)
             break;
           case 10:

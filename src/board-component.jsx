@@ -6,12 +6,7 @@ import HTML5Backend from 'react-dnd-html5-backend'
 class BoardComponent extends Component {
   render() {
     return (
-      <div style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexWrap: 'wrap'
-      }}>
+      <div class="board">
         {this.props.tiles}
       </div>
     )

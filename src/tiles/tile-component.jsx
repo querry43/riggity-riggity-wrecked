@@ -6,7 +6,7 @@ export default class TileComponent extends Component {
     const { className } = this.props
     return (
       <div className="tileContainer">
-        <div className={ className }>
+        <div className={ `tile ${className}` }>
         </div>
       </div>
     )
