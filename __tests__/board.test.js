@@ -13,7 +13,7 @@ test('construct board', () => {
     0,  0,  0,  0,  0,  0,  0,
   ]
 
-  const b = new Board(map)
+  const b = new Board(0, map)
 
   expect(b.firstTile).toBe(b.firstTile.right.left)
   expect(b.firstTile).toBe(b.firstTile.down.up)
@@ -81,7 +81,7 @@ test('as component', () => {
     0,  0,  0,  0,  0,  0,  0,
   ]
 
-  const b = new Board(map)
+  const b = new Board(0, map)
 
   const expectedStyles = map.map(x => `tile-${x}`)
   const foundStyles = b.asComponent().props['tiles'].map(x => x.props['className'])
@@ -89,7 +89,7 @@ test('as component', () => {
   expect(foundStyles).toEqual(expectedStyles)
 })
 
-test('is win', () => {
+test('isWin', () => {
   const winMap = [
     0,  0,  0,  0,  0,  0,  0,
     0,  3,  3, 13, 14,  3,  0,
@@ -110,6 +110,21 @@ test('is win', () => {
     0,  0,  0,  0,  0,  0,  0,
   ]
 
-  expect((new Board(winMap)).isWin()).toBeTruthy()
-  expect((new Board(loseMap)).isWin()).toBeFalsy()
+  expect((new Board(0, winMap)).isWin()).toBeTruthy()
+  expect((new Board(0, loseMap)).isWin()).toBeFalsy()
+})
+
+test('isLose', () => {
+  const map = [
+    0,  1,  2,  3,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,
+    0, 10, 11, 12, 13, 14, 15,
+    0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,
+    0,  0,  0,  0,  0,  0,  0,
+  ]
+
+  expect((new Board(1, map)).isLose()).toBeFalsy()
+  expect((new Board(0, map)).isLose()).toBeTruthy()
 })

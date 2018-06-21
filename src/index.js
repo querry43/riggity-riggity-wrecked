@@ -17,12 +17,14 @@ const map = [
   0,  0,  0,  0,  0,  0,  0,
 ]
 
-const board = new Board(map)
+const board = new Board(3, map)
 
 board.observe(() => {
   ReactDOM.render(
     <GameComponent board={board} />,
     rootEl
   )
+  console.log(`moves = ${board.moves}`)
   console.log(`isWin = ${board.isWin()}`)
+  console.log(`isLose = ${board.isLose()}`)
 })

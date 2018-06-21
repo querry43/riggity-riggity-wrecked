@@ -50,7 +50,8 @@ export default class BaseTile {
           key={this.key}
           className={`tile-${this.type}`}
           getState={() => {return self}}
-          emitChange={() => {board.emitChange()}}/>
+          emitChange={() => {board.emitChange()}}
+          decMoves={() => {board.moves--}}/>
       : <TileComponent key={this.key} className={`tile-${this.type}`} />
   }
 

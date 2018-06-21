@@ -13,6 +13,7 @@ const tileTarget = {
       console.log(`swapping ${draggedTile.key} and ${droppedTile.key}`)
       draggedTile.swapWithTile(droppedTile)
 
+      props.decMoves()
       props.emitChange()
     }
   }
@@ -49,7 +50,8 @@ DraggableTileContainer.propTypes = {
   connectDropTarget: PropTypes.func.isRequired,
   isOver: PropTypes.bool.isRequired,
   getState: PropTypes.func.isRequired,
-  emitChange: PropTypes.func.isRequired
+  emitChange: PropTypes.func.isRequired,
+  decMoves: PropTypes.func.isRequired
 }
 
 export default DropTarget(ItemTypes.TILE, tileTarget, collect)(DraggableTileContainer)

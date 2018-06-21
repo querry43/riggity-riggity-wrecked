@@ -6,7 +6,7 @@ import HTML5Backend from 'react-dnd-html5-backend'
 class BoardComponent extends Component {
   render() {
     return (
-      <div class="board">
+      <div className="board">
         {this.props.tiles}
       </div>
     )

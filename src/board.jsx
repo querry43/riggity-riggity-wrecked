@@ -3,7 +3,9 @@ import BoardComponent from './board-component'
 import { BaseTile, LineTile, RickTile, StartTile } from './tiles'
 
 export default class Board {
-  constructor(map) {
+  constructor(moves, map) {
+    this.moves = moves
+
     const tiles = []
     let startTile
 
@@ -74,6 +76,10 @@ export default class Board {
 
   isWin() {
     return this.startTile.isWin(null)
+  }
+
+  isLose() {
+    return this.moves < 1
   }
 
   observe(fn) {
