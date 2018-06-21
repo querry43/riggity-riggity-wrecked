@@ -1,7 +1,7 @@
 .tileContainer {
   position: relative;
   width: 14.2%;
-  height: 14.2%;
+  height: 14.29%;
 }
 
 .tileMask {
@@ -30,6 +30,11 @@
 .tile-13 { background-image: url("./images/tile-13.png"); }
 .tile-14 { background-image: url("./images/tile-14.png"); }
 .tile-15 { background-image: url("./images/tile-15.png"); }
+
+.tile-20 { background-image: url("./images/tile-20.png"); }
+.tile-21 { background-image: url("./images/tile-21.png"); }
+.tile-22 { background-image: url("./images/tile-22.png"); }
+.tile-23 { background-image: url("./images/tile-23.png"); }
 
 .tile-30 { background-image: url("./images/tile-30.png"); }
 
