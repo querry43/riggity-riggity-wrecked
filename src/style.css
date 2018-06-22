@@ -71,3 +71,21 @@ body {
 .lose {
   background-image: url("./images/angry-rick.jpg");
 }
+
+.levelSelect {
+  left: 0;
+  right: 0;
+  width: 800px;
+  height: 600px;
+  background-color: gray;
+  margin: auto;
+  top: 20px;
+  position: relative;
+}
+
+.levelSelect>div {
+  text-align: center;
+  font-size: 50px;
+  top: 30px;
+  position: relative;
+}
