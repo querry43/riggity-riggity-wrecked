@@ -14,7 +14,7 @@ body {
 
 .boardContainer {
   width: 600px;
-  height: 600px;
+  height: 428px;
   margin: 0 auto;
 }
 
@@ -23,6 +23,7 @@ body {
   height: 300px;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   background-image: url("./images/hecklers.jpg");
   background-size: cover;
 }

@@ -4,11 +4,9 @@ import { BaseTile, LineTile, RickTile, StartTile } from '../src/tiles'
 
 test('construct board', () => {
   const map = [
-    0,  1,  2,  3,  0,  0,  0,
+    0,  1,  2, 30,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
     0, 10, 11, 12, 13, 14, 15,
-    0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
   ]
@@ -34,7 +32,7 @@ test('construct board', () => {
   expect(tile).toBeInstanceOf(RickTile)
 
   tile = tile.right
-  expect(tile.type).toBe(3)
+  expect(tile.type).toBe(30)
   expect(tile.draggable).toBeTruthy()
   expect(tile).toBeInstanceOf(BaseTile)
 
@@ -77,8 +75,6 @@ test('as component', () => {
     0, 10, 11, 12, 13, 14, 15,
     0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,
   ]
 
   const b = new Board(0, map)
@@ -96,8 +92,6 @@ test('isWin', () => {
     0,  3, 13, 15, 11,  3,  0,
     1, 10, 15,  3, 12, 10,  2,
     0,  3,  3,  3,  3,  3,  0,
-    0,  3,  3,  3,  3,  3,  0,
-    0,  0,  0,  0,  0,  0,  0,
   ]
 
   const loseMap = [
@@ -106,8 +100,6 @@ test('isWin', () => {
     0,  3, 13, 15, 11,  3,  0,
     1, 10, 15,  3, 12,  3,  2,
     0,  3,  3,  3,  3,  3,  0,
-    0,  3,  3,  3,  3,  3,  0,
-    0,  0,  0,  0,  0,  0,  0,
   ]
 
   expect((new Board(0, winMap)).isWin()).toBeTruthy()
@@ -119,8 +111,6 @@ test('isLose', () => {
     0,  1,  2,  3,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
     0, 10, 11, 12, 13, 14, 15,
-    0,  0,  0,  0,  0,  0,  0,
-    0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,
   ]

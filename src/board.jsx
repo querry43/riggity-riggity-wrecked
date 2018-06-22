@@ -9,10 +9,10 @@ export default class Board {
     const tiles = []
     let startTile
 
-    for (let col = 0; col < 7; col++) {
-      for (let row = 0; row < 7; row++) {
+    for (let row = 0; row < 5; row++) {
+      for (let col = 0; col < 7; col++) {
 
-        let i = (col*7) + row
+        let i = (row*7) + col
         let tile
 
         switch (map[i]) {
@@ -49,11 +49,11 @@ export default class Board {
             break;
         }
 
-        if (row > 0) {
+        if (col > 0) {
           tile.left = tiles[i-1]
           tiles[i-1].right = tile
         }
-        if (col > 0) {
+        if (row > 0) {
           tile.up = tiles[i-7]
           tiles[i-7].down = tile
         }
@@ -69,7 +69,7 @@ export default class Board {
   asComponent() {
     let components = []
     let row = this.firstTile
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
       components = components.concat(row.rowAsComponents(this))
       row = row.down
     }
