@@ -81,6 +81,7 @@ body {
   margin: auto;
   top: 20px;
   position: relative;
+  opacity: 0.9;
 }
 
 .levelSelect>div {
@@ -88,4 +89,9 @@ body {
   font-size: 50px;
   top: 30px;
   position: relative;
+  margin: 40px;
+}
+
+.levelSelectLevels {
+  margin: 40px;
 }

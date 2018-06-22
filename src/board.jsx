@@ -28,12 +28,22 @@ export default class Board {
           case 22:
           case 23:
           case 30:
-          case 50:
-          case 51:
-          case 52:
-          case 53:
-          case 54:
             tile = new BaseTile(true, map[i], i)
+            break;
+          case 50:
+            tile = new BaseTile(true, map[i], i, 'Bitch!')
+            break;
+          case 51:
+            tile = new BaseTile(true, map[i], i, 'How familiar are you with the gear wars exactly?')
+            break;
+          case 52:
+            tile = new BaseTile(true, map[i], i, 'I just love killin.')
+            break;
+          case 53:
+            tile = new BaseTile(true, map[i], i, 'Oooohh Weeee!')
+            break;
+          case 54:
+            tile = new BaseTile(true, map[i], i, 'He is the one true morty!')
             break;
           case 10:
           case 11:

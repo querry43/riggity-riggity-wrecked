@@ -4,7 +4,7 @@ import TileComponent from './tile-component'
 import TermTile from './term-tile'
 
 export default class BaseTile {
-  constructor(draggable, type, key) {
+  constructor(draggable, type, key, quip) {
     this.draggable = draggable
     this.type = type
     this.key = key
@@ -12,6 +12,7 @@ export default class BaseTile {
     this.right = new TermTile()
     this.down = new TermTile()
     this.left = new TermTile()
+    this.quip = quip
   }
 
   swapWithTile(tile) {
@@ -51,7 +52,9 @@ export default class BaseTile {
           className={`tile-${this.type}`}
           getState={() => {return self}}
           emitChange={() => {board.emitChange()}}
-          decMoves={() => {board.moves--}}/>
+          decMoves={() => {board.moves--}}
+          quip={this.quip}
+        />
       : <TileComponent key={this.key} className={`tile-${this.type}`} />
   }
 

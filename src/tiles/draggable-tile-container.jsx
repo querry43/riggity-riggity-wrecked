@@ -34,7 +34,8 @@ class DraggableTileContainer extends Component {
         <DraggableTileComponent
             className={this.props.className}
             getState={this.props.getState}
-            emitChange={this.props.emitChange}>
+            emitChange={this.props.emitChange}
+            quip={this.props.quip}>
           {this.props.children}
         </DraggableTileComponent>
 
@@ -51,7 +52,8 @@ DraggableTileContainer.propTypes = {
   isOver: PropTypes.bool.isRequired,
   getState: PropTypes.func.isRequired,
   emitChange: PropTypes.func.isRequired,
-  decMoves: PropTypes.func.isRequired
+  decMoves: PropTypes.func.isRequired,
+  quip: PropTypes.string
 }
 
 export default DropTarget(ItemTypes.TILE, tileTarget, collect)(DraggableTileContainer)

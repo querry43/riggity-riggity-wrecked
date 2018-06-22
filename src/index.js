@@ -42,10 +42,10 @@ try {
 } catch(error) {
   ReactDOM.render(
     <div className="levelSelect">
-      <div>Select Level</div>
-      <div>
+      <div className="levelSelectTitle">Select Level</div>
+      <div className="levelSelectLevels">
         <a href={`${origin}?moves=4&map=0,20,21,13,14,20,0,0,21,50,23,51,11,0,1,10,15,20,12,21,2,0,22,13,10,15,20,0,0,20,22,20,52,23,0`}>Level 1</a><br/>
-        <a href={`${origin}?moves=4&map=0,12,10,13,10,14,0,1,15,54,20,14,12,2,0,11,21,20,11,21,0,0,12,21,10,51,20,0,0,20,22,20,14,23,0`}>Level 2</a><br/>
+        <a href={`${origin}?moves=2&map=0,12,10,13,10,14,0,1,15,54,20,14,12,2,0,11,21,20,11,21,0,0,12,21,10,51,20,0,0,20,22,20,14,23,0`}>Level 2</a><br/>
       </div>
     </div>,
     rootEl
