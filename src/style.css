@@ -31,10 +31,43 @@ body {
 
 .rickText {
   position: absolute;
-  background-image: url("./images/rick-text-1.png");
   background-repeat: no-repeat;
   width: 200px;
   height: 100px;
   top: 10px;
   left: 255px;
+}
+
+.moves {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  background-color: lightskyblue;
+  font-size: 60px;
+  font-family: sans-serif;
+  text-align: center;
+  top: 220px;
+  left: 520px;
+}
+
+.overlay {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background-color: darkslategray;
+  margin:  0 auto;
+  top: 80px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.win {
+  background-image: url("./images/high-rick.jpg");
+}
+
+.lose {
+  background-image: url("./images/angry-rick.jpg");
 }
