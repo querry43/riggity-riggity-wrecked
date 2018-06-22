@@ -19,6 +19,7 @@ body {
 }
 
 .hecklers {
+  position: relative;
   width: 600px;
   height: 300px;
   margin: 0 auto;
@@ -26,4 +27,14 @@ body {
   margin-bottom: 20px;
   background-image: url("./images/hecklers.jpg");
   background-size: cover;
+}
+
+.rickText {
+  position: absolute;
+  background-image: url("./images/rick-text-1.png");
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 100px;
+  top: 10px;
+  left: 255px;
 }

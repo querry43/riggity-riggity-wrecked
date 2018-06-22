@@ -5,7 +5,9 @@ export default class GameComponent extends Component {
   render() {
     return (
       <div>
-        <div className="hecklers"></div>
+        <div className="hecklers">
+          <div className="rickText"></div>
+        </div>
         <div className="boardContainer">
           {this.props.board.asComponent()}
         </div>
