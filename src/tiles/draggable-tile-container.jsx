@@ -1,8 +1,9 @@
+import DraggableTileComponent from './draggable-tile-component'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import DraggableTileComponent from './draggable-tile-component'
-import { ItemTypes } from './constants';
-import { DropTarget } from 'react-dnd';
+import ReactTooltip from 'react-tooltip'
+import { ItemTypes } from './constants'
+import { DropTarget } from 'react-dnd'
 
 const tileTarget = {
   drop(props, monitor) {
@@ -17,27 +18,31 @@ const tileTarget = {
       props.emitChange()
     }
   }
-};
+}
 
 function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver()
-  };
+  }
 }
 
 class DraggableTileContainer extends Component {
   render() {
-    const { connectDropTarget, isOver } = this.props;
+    const { connectDropTarget, isOver } = this.props
+    console.log(this)
     return connectDropTarget(
-      <div className="tileContainer">
+      <div
+          className="tileContainer"
+          data-tip={ this.props.quip }>
         <DraggableTileComponent
             className={this.props.className}
             getState={this.props.getState}
-            emitChange={this.props.emitChange}
-            quip={this.props.quip}>
+            emitChange={this.props.emitChange}>
           {this.props.children}
         </DraggableTileComponent>
+
+        <ReactTooltip />
 
         {isOver && <div className="tileMask"> </div>}
 

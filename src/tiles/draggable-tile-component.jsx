@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import ReactTooltip from 'react-tooltip'
 import { DragSource } from 'react-dnd'
 import { ItemTypes } from './constants'
 
@@ -22,11 +21,8 @@ class DraggableTileComponent extends Component {
     const { className, connectDragSource, isDragging } = this.props
     return connectDragSource(
       <div
-        data-tip={ this.props.quip }
         className={ `tile ${className}` }
-        style={{ opacity: isDragging ? 0.5 : 1, }}>
-        <ReactTooltip />
-      </div>
+        style={{ opacity: isDragging ? 0.5 : 1, }} />
     )
   }
 
@@ -38,8 +34,7 @@ DraggableTileComponent.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired,
   getState: PropTypes.func.isRequired,
-  emitChange: PropTypes.func.isRequired,
-  quip: PropTypes.string
+  emitChange: PropTypes.func.isRequired
 }
 
 export default DragSource(ItemTypes.TILE, tileSource, collect)(DraggableTileComponent)
